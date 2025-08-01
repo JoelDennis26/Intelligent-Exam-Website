@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 40px auto; background: #fff; padding: 32px; border-radius: 8px; box-shadow: 0 2px 8px #ccc; }
+        .header { display: flex; justify-content: space-between; align-items: center; }
+        .admin-panel { background: #f0f8ff; padding: 16px; border: 1px dashed #0074d9; margin-bottom: 24px; }
+        .question { margin-bottom: 32px; }
+        .options { list-style: none; padding: 0; }
+        .options li { margin-bottom: 12px; }
+        .actions { text-align: right; }
+        .btn { padding: 8px 20px; border: none; border-radius: 4px; background: #0074d9; color: #fff; cursor: pointer; }
+        .btn:disabled { background: #ccc; }
+        .edit-btn { background: #ff851b; margin-left: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Exam Title</h2>
+            <!-- Toggle for admin view (for wireframe purposes) -->
+            <label>
+                <input type="checkbox" id="adminToggle"> Admin Mode
+            </label>
+        </div>
+
+        <!-- Admin Panel (hidden by default) -->
+        <div class="admin-panel" id="adminPanel" style="display:none;">
+            <strong>Admin Controls:</strong>
+            <ul>
+                <li><button class="btn edit-btn">Edit Question</button></li>
+                <li><button class="btn edit-btn">Add Question</button></li>
+                <li><button class="btn edit-btn">Delete Question</button></li>
+                <li><button class="btn edit-btn">Publish/Unpublish Exam</button></li>
+            </ul>
+        </div>
+
+        <!-- Exam Questions (Sample) -->
+        <form>
+            <div class="question">
+                <div><strong>Q1:</strong> What is the capital of France?</div>
+                <ul class="options">
+                    <li><label><input type="radio" name="q1"> Berlin</label></li>
+                    <li><label><input type="radio" name="q1"> Madrid</label></li>
+                    <li><label><input type="radio" name="q1"> Paris</label></li>
+                    <li><label><input type="radio" name="q1"> Rome</label></li>
+                </ul>
+                <!-- Admin edit button (hidden by default) -->
+                <button class="btn edit-btn" type="button" style="display:none;">Edit</button>
+            </div>
+            <div class="question">
+                <div><strong>Q2:</strong> 2 + 2 = ?</div>
+                <ul class="options">
+                    <li><label><input type="radio" name="q2"> 3</label></li>
+                    <li><label><input type="radio" name="q2"> 4</label></li>
+                    <li><label><input type="radio" name="q2"> 5</label></li>
+                    <li><label><input type="radio" name="q2"> 6</label></li>
+                </ul>
+                <button class="btn edit-btn" type="button" style="display:none;">Edit</button>
+            </div>
+            <div class="actions">
+                <button class="btn" type="submit">Submit Exam</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        // Simple wireframe logic to toggle admin controls
+        const adminToggle = document.getElementById('adminToggle');
+        const adminPanel = document.getElementById('adminPanel');
+        const editButtons = document.querySelectorAll('.edit-btn[type="button"]');
+        adminToggle.addEventListener('change', function() {
+            if (this.checked) {
+                adminPanel.style.display = 'block';
+                editButtons.forEach(btn => btn.style.display = 'inline-block');
+            } else {
+                adminPanel.style.display = 'none';
+                editButtons.forEach(btn => btn.style.display = 'none');
+            }
+        });
+    </script>
+</body>
+</html></ul></div>
