@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login/Logout Wireframe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: #f4f6fb;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: #fff;
+            padding: 2rem 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+            width: 340px;
+        }
+        .container h2 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #333;
+        }
+        .container label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        .container input[type="text"],
+        .container input[type="password"] {
+            width: 100%;
+            padding: 0.6rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .container button {
+            width: 100%;
+            padding: 0.7rem;
+            background: #3a7afe;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .container button:hover {
+            background: #265ecf;
+        }
+        .container .register-link {
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+            color: #3a7afe;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .container .register-link:hover {
+            text-decoration: underline;
+        }
+        .logout-section {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+        .logout-section p {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <form id="loginForm">
+            <h2>Login</h2>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required autocomplete="username">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required autocomplete="current-password">
+
+            <button type="submit">Login</button>
+            <a class="register-link" href="#">Don't have an account? Register</a>
+        </form>
+        <!-- Logout Section -->
+        <div class="logout-section" id="logoutSection">
+            <h2>Welcome!</h2>
+            <p>You are logged in.</p>
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </div>
+    <script>
+        // Simple wireframe logic for switching between login/logout
+        const loginForm = document.getElementById('loginForm');
+        const logoutSection = document.getElementById('logoutSection');
+        const logoutBtn = document.getElementById('logoutBtn');
+
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            loginForm.style.display = 'none';
+            logoutSection.style.display = 'flex';
+        });
+
+        logoutBtn.addEventListener('click', function() {
+            logoutSection.style.display = 'none';
+            loginForm.style.display = 'block';
+            loginForm.reset();
+        });
+    </script>
+</body>
+</html>
