@@ -1,7 +1,64 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background: #f4f4f4;
+    padding: 0;
+    background: #f4f6f8;
+}
+
+header {
+    background: #2d3e50;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background: #34495e;
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 80px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+main {
+    margin-left: 220px;
+    padding: 40px 30px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
 }
 
 .header,
@@ -13,10 +70,10 @@ body {
 }
 
 .nav {
-    background: #444;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin: 24px 0;
 }
 
 .nav span {
@@ -26,12 +83,79 @@ body {
     border-radius: 4px;
 }
 
+.nav button {
+    padding: 10px 20px;
+    background: #3a7afe;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.nav button:hover {
+    background: #265ecf;
+}
+
 .container {
-    max-width: 1200px;
-    margin: 30px auto;
+    max-width: 800px;
+    margin: 40px auto;
     background: #fff;
-    padding: 40px;
+    padding: 32px;
     border-radius: 8px;
+    box-shadow: 0 2px 8px #ccc;
+}
+
+.container h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+}
+
+.container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.container input[type="text"],
+.container input[type="password"] {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.container button {
+    width: 100%;
+    padding: 0.7rem;
+    background: #3a7afe;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.container button:hover {
+    background: #265ecf;
+}
+
+.container .register-link {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    color: #3a7afe;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.container .register-link:hover {
+    text-decoration: underline;
 }
 
 .section {
@@ -54,4 +178,136 @@ body {
 
 .col {
     flex: 1;
+}
+
+.logout-section {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logout-section p {
+    margin-bottom: 1.5rem;
+}
+
+.admin-panel {
+    background: #f0f8ff;
+    padding: 16px;
+    border: 1px dashed #0074d9;
+    margin-bottom: 24px;
+}
+
+.question {
+    margin-bottom: 32px;
+}
+
+.options {
+    list-style: none;
+    padding: 0;
+}
+
+.options li {
+    margin-bottom: 12px;
+}
+
+.actions {
+    text-align: right;
+}
+
+.btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    background: #0074d9;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn:disabled {
+    background: #ccc;
+}
+
+.edit-btn {
+    background: #ffc107;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background: #6c757d;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.profile-container {
+    max-width: 400px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.profile-container h2 {
+    text-align: center;
+}
+
+.profile-container label {
+    display: block;
+    margin-top: 16px;
+}
+
+.profile-container input[type="text"],
+.profile-container input[type="email"],
+.profile-container input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.profile-container input[readonly] {
+    background: #eee;
+}
+
+.profile-container .note {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.profile-container button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.profile-container button:hover {
+    background: #0056b3;
+}
+
+.profile-container .admin-only {
+    color: #b00;
+    font-size: 0.9em;
+    display: none;
 }
