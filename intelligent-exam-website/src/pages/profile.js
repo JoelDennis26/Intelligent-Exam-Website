@@ -1,22 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>User Profile</title>
-    <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
+export function renderProfilePage() {
+    return `
     <div class="header">
         <h1>Intelligent Exam Website</h1>
         <div class="subtitle">Empowering Smart Learning</div>
     </div>
     <div class="nav">
-        <button onclick="location.href='home.html'">Home</button>
-        <button onclick="location.href='exam.html'">Take Exam</button>
-        <button onclick="location.href='results.html'">Results</button>
-        <button onclick="location.href='profile.html'">Profile</button>
-        <button onclick="location.href='admin.html'">Admin</button>
-        <button onclick="location.href='login.html'">Login/Logout</button>
+        <button data-page="home">Home</button>
+        <button data-page="exam">Take Exam</button>
+        <button data-page="results">Results</button>
+        <button data-page="profile">Profile</button>
+        <button data-page="admin">Admin</button>
+        <button data-page="login">Login/Logout</button>
     </div>
     <div class="container profile-container">
         <h2>Edit Profile</h2>
@@ -45,18 +39,22 @@
     <div class="footer">
         &copy; 2025 Intelligent Exam Website
     </div>
-    <script>
-        // Simple profile form feedback
+    `;
+}
+
+export function setupProfilePageEvents() {
+    setTimeout(() => {
         const profileForm = document.getElementById('profileForm');
         const profileMessage = document.getElementById('profileMessage');
-        profileForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            profileMessage.textContent = "Profile changes saved (demo only).";
-            profileMessage.style.color = "#3a7afe";
-            setTimeout(() => {
-                profileMessage.textContent = "";
-            }, 2500);
-        });
-    </script>
-</body>
-</html>
+        if (profileForm && profileMessage) {
+            profileForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                profileMessage.textContent = "Profile changes saved (demo only).";
+                profileMessage.style.color = "#3a7afe";
+                setTimeout(() => {
+                    profileMessage.textContent = "";
+                }, 2500);
+            });
+        }
+    }, 100);
+}

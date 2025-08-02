@@ -1,29 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Intelligent Exam Website - Home</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+export function renderHomePage() {
+    return `
     <div class="header">
         <h1>Intelligent Exam Website</h1>
         <div class="subtitle">Empowering Smart Learning</div>
     </div>
     <div class="nav">
-        <button onclick="location.href='home.html'">Home</button>
-        <button onclick="location.href='exam.html'">Take Exam</button>
-        <button onclick="location.href='results.html'">Results</button>
-        <button onclick="location.href='profile.html'">Profile</button>
-        <button onclick="location.href='admin.html'">Admin</button>
-        <button onclick="location.href='login.html'">Login/Logout</button>
+        <button data-page="home">Home</button>
+        <button data-page="exam">Take Exam</button>
+        <button data-page="results">Results</button>
+        <button data-page="profile">Profile</button>
+        <button data-page="admin">Admin</button>
+        <button data-page="login">Login/Logout</button>
     </div>
     <div class="container">
         <div class="section hero">
-            <img src="logo.png" alt="Logo" class="logo" />
+            <img src="/logo-exam.jpg" alt="Logo" class="logo" />
             <h2>Welcome to Intelligent Exam Website!</h2>
             <p>Your platform for smart, AI-powered assessments and instant feedback.</p>
-            <button class="quick-start" onclick="location.href='exam.html'">Quick Start</button>
+            <button class="quick-start" data-page="exam">Quick Start</button>
         </div>
         <div class="row">
             <div class="col section">
@@ -64,5 +58,6 @@
     <div class="footer">
         &copy; 2025 Intelligent Exam Website
     </div>
-</body>
-</html>
+</div>
+    `;
+}

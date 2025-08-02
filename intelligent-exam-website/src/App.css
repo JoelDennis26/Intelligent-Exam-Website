@@ -1,3 +1,197 @@
+/* Reset and base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #061c54;
+  color: #222;
+}
+
+/* Header styles */
+.header {
+  background: linear-gradient(90deg, #3a7afe 0%, #265ecf 100%);
+  color: #fff;
+  padding: 32px 0 16px 0;
+  text-align: center;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  box-shadow: 0 2px 8px rgba(58,122,254,0.08);
+}
+
+.header .subtitle {
+  font-size: 1.2em;
+  color: #e0e7ff;
+  margin-top: 8px;
+}
+
+/* Navigation styles */
+.nav {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin: 32px 0 24px 0;
+}
+
+.nav button {
+  padding: 12px 28px;
+  background: #fff;
+  color: #3a7afe;
+  border: 2px solid #3a7afe;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(58,122,254,0.06);
+}
+
+.nav button:hover, .nav button.active {
+  background: #3a7afe;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(58,122,254,0.12);
+}
+
+/* Container styles */
+.container {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+/* Section styles */
+.section {
+  margin-bottom: 32px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 16px;
+}
+
+.quick-start {
+  margin-top: 16px;
+  padding: 12px 32px;
+  background: #3a7afe;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(58,122,254,0.08);
+}
+
+.quick-start:hover {
+  background: #265ecf;
+}
+
+.row {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.col {
+  flex: 1;
+  background: #f4f6fb;
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 220px;
+  box-shadow: 0 2px 8px rgba(58,122,254,0.04);
+}
+
+.section-title {
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #3a7afe;
+  font-size: 1.1em;
+}
+
+.list, .features-list {
+  list-style: disc inside;
+  color: #333;
+  padding-left: 0;
+  margin: 0 0 0 8px;
+}
+
+.features-list {
+  list-style: square inside;
+}
+
+.footer-section {
+  text-align: center;
+  font-size: 1em;
+}
+
+.footer-section a {
+  color: #3a7afe;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  text-align: center;
+  color: #888;
+  padding: 18px 0 8px 0;
+  font-size: 0.95em;
+}
+
+/* Card/grid styles for admin/dashboard */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: #f4f6fb;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(58,122,254,0.06);
+  padding: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(58,122,254,0.12);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #265ecf;
+}
+
+.card .btn {
+  margin-top: 16px;
+  padding: 10px 24px;
+  background: #3a7afe;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.card .btn:hover {
+  background: #265ecf;
+}
+
+/* App specific styles */
 .App {
   text-align: center;
 }
@@ -35,4 +229,125 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Responsive design */
+@media (max-width: 700px) {
+  .container {
+    padding: 16px 4px;
+  }
+  .row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Login Page Styles --- */
+
+.login-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #444;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.login-container button[type="submit"] {
+  width: 100%;
+  background: #0077cc;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-container button[type="submit"]:hover {
+  background: #005fa3;
+}
+
+.register-link {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+/* Logout section styling */
+.logout-section {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 2rem;
+  background: #e7f5ff;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+}
+
+.logout-section h2 {
+  margin: 0;
+  color: #0077cc;
+}
+
+.logout-section p {
+  margin: 0;
+  color: #444;
+}
+
+#logoutBtn {
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#logoutBtn:hover {
+  background: #d9363e;
 }
