@@ -1,32 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Exam Page</title>
-    <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
+export function renderExamPage() {
+    return `
+    <div class="header">
+        <h1>Intelligent Exam Website</h1>
+        <div class="subtitle">Empowering Smart Learning</div>
+    </div>
+    <div class="nav">
+        <button onclick="location.href='home.html'">Home</button>
+        <button onclick="location.href='exam.html'">Take Exam</button>
+        <button onclick="location.href='results.html'">Results</button>
+        <button onclick="location.href='profile.html'">Profile</button>
+        <button onclick="location.href='admin.html'">Admin</button>
+        <button onclick="location.href='login.html'">Login/Logout</button>
+    </div>
     <div class="container">
         <div class="header">
             <h2>Exam Title</h2>
-            <!-- Toggle for admin view (for wireframe purposes) -->
             <label>
                 <input type="checkbox" id="adminToggle"> Admin Mode
             </label>
         </div>
-
-        <!-- Admin Panel (hidden by default) -->
         <div class="admin-panel" id="adminPanel" style="display:none;">
             <strong>Admin Controls:</strong>
             <ul>
-                <li><button class="btn edit-btn">Edit Question</button></li>
-                <li><button class="btn edit-btn">Add Question</button></li>
-                <li><button class="btn edit-btn">Delete Question</button></li>
-                <li><button class="btn edit-btn">Publish/Unpublish Exam</button></li>
+                <li><button class="btn edit-btn" type="button">Edit Question</button></li>
+                <li><button class="btn edit-btn" type="button">Add Question</button></li>
+                <li><button class="btn edit-btn" type="button">Delete Question</button></li>
+                <li><button class="btn edit-btn" type="button">Publish/Unpublish Exam</button></li>
             </ul>
         </div>
-
-        <!-- Exam Questions (Sample) -->
         <form>
             <div class="question">
                 <div><strong>Q1:</strong> What is the capital of France?</div>
@@ -36,7 +37,6 @@
                     <li><label><input type="radio" name="q1"> Paris</label></li>
                     <li><label><input type="radio" name="q1"> Rome</label></li>
                 </ul>
-                <!-- Admin edit button (hidden by default) -->
                 <button class="btn edit-btn" type="button" style="display:none;">Edit</button>
             </div>
             <div class="question">
@@ -54,20 +54,29 @@
             </div>
         </form>
     </div>
-    <script>
-        // Simple wireframe logic to toggle admin controls
+    <div class="footer">
+        &copy; 2025 Intelligent Exam Website
+    </div>
+    `;
+}
+
+export function setupExamPageEvents() {
+    setTimeout(() => {
         const adminToggle = document.getElementById('adminToggle');
         const adminPanel = document.getElementById('adminPanel');
         const editButtons = document.querySelectorAll('.edit-btn[type="button"]');
-        adminToggle.addEventListener('change', function() {
-            if (this.checked) {
-                adminPanel.style.display = 'block';
-                editButtons.forEach(btn => btn.style.display = 'inline-block');
-            } else {
-                adminPanel.style.display = 'none';
-                editButtons.forEach(btn => btn.style.display = 'none');
-            }
-        });
-    </script>
-</body>
-</html></ul></div>
+        if (adminToggle && adminPanel && editButtons.length) {
+            adminToggle.addEventListener('change', function() {
+                if (this.checked) {
+                    adminPanel.style.display = 'block';
+                    editButtons.forEach(btn => btn.style.display = 'inline-block');
+                } else {
+                    adminPanel.style.display = 'none';
+                    editButtons.forEach(btn => btn.style.display = 'none');
+                }
+            });
+            // Hide edit buttons by default
+            editButtons.forEach(btn => btn.style.display = 'none');
+        }
+    }, 0);
+}

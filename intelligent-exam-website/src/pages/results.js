@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Exam Results</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+export function renderResultsPage() {
+    return `
     <div class="container">
         <div class="header">
             <h1>Exam Results</h1>
@@ -37,7 +31,6 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Example row -->
                 <tr>
                     <td>1</td>
                     <td>[Question text]</td>
@@ -54,5 +47,5 @@
             <button>Download PDF</button>
         </div>
     </div>
-</body>
-</html>
+    `;
+}

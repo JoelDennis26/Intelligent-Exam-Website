@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>User Profile</title>
-    <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
+export function renderProfilePage() {
+    return `
     <div class="header">
         <h1>Intelligent Exam Website</h1>
         <div class="subtitle">Empowering Smart Learning</div>
@@ -45,18 +39,22 @@
     <div class="footer">
         &copy; 2025 Intelligent Exam Website
     </div>
-    <script>
-        // Simple profile form feedback
+    `;
+}
+
+export function setupProfilePageEvents() {
+    setTimeout(() => {
         const profileForm = document.getElementById('profileForm');
         const profileMessage = document.getElementById('profileMessage');
-        profileForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            profileMessage.textContent = "Profile changes saved (demo only).";
-            profileMessage.style.color = "#3a7afe";
-            setTimeout(() => {
-                profileMessage.textContent = "";
-            }, 2500);
-        });
-    </script>
-</body>
-</html>
+        if (profileForm && profileMessage) {
+            profileForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                profileMessage.textContent = "Profile changes saved (demo only).";
+                profileMessage.style.color = "#3a7afe";
+                setTimeout(() => {
+                    profileMessage.textContent = "";
+                }, 2500);
+            });
+        }
+    }, 100);
+}
