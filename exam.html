@@ -6,6 +6,18 @@
     <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
+    <div class="header">
+        <h1>Intelligent Exam Website</h1>
+        <div class="subtitle">Empowering Smart Learning</div>
+    </div>
+    <div class="nav">
+        <button onclick="location.href='home.html'">Home</button>
+        <button onclick="location.href='exam.html'">Take Exam</button>
+        <button onclick="location.href='results.html'">Results</button>
+        <button onclick="location.href='profile.html'">Profile</button>
+        <button onclick="location.href='admin.html'">Admin</button>
+        <button onclick="location.href='login.html'">Login/Logout</button>
+    </div>
     <div class="container">
         <div class="header">
             <h2>Exam Title</h2>
@@ -19,10 +31,10 @@
         <div class="admin-panel" id="adminPanel" style="display:none;">
             <strong>Admin Controls:</strong>
             <ul>
-                <li><button class="btn edit-btn">Edit Question</button></li>
-                <li><button class="btn edit-btn">Add Question</button></li>
-                <li><button class="btn edit-btn">Delete Question</button></li>
-                <li><button class="btn edit-btn">Publish/Unpublish Exam</button></li>
+                <li><button class="btn edit-btn" type="button">Edit Question</button></li>
+                <li><button class="btn edit-btn" type="button">Add Question</button></li>
+                <li><button class="btn edit-btn" type="button">Delete Question</button></li>
+                <li><button class="btn edit-btn" type="button">Publish/Unpublish Exam</button></li>
             </ul>
         </div>
 
@@ -54,8 +66,11 @@
             </div>
         </form>
     </div>
+    <div class="footer">
+        &copy; 2025 Intelligent Exam Website
+    </div>
     <script>
-        // Simple wireframe logic to toggle admin controls
+        // Toggle admin controls and edit buttons
         const adminToggle = document.getElementById('adminToggle');
         const adminPanel = document.getElementById('adminPanel');
         const editButtons = document.querySelectorAll('.edit-btn[type="button"]');
@@ -68,6 +83,8 @@
                 editButtons.forEach(btn => btn.style.display = 'none');
             }
         });
+        // Hide edit buttons by default
+        editButtons.forEach(btn => btn.style.display = 'none');
     </script>
 </body>
-</html></ul></div>
+</html>

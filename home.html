@@ -4,13 +4,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Intelligent Exam Website - Wireframe</title>
+    <title>Intelligent Exam Website - Home</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="header">
         <h1>Intelligent Exam Website</h1>
-        <div>(Wireframe Layout)</div>
+        <div class="subtitle">Empowering Smart Learning</div>
     </div>
     <div class="nav">
         <button onclick="location.href='home.html'">Home</button>
@@ -21,33 +21,50 @@
         <button onclick="location.href='login.html'">Login/Logout</button>
     </div>
     <div class="container">
-        <div class="section">
-            <div class="section-title">Hero Banner / Welcome Message</div>
-            <p>[Logo] [Welcome to Intelligent Exam Website!]</p>
-            <p>[Quick Start Button]</p>
+        <!-- Hero Banner / Welcome Message -->
+        <div class="section hero">
+            <img src="logo.png" alt="Logo" class="logo" />
+            <h2>Welcome to Intelligent Exam Website!</h2>
+            <p>Your platform for smart, AI-powered assessments and instant feedback.</p>
+            <button class="quick-start" onclick="location.href='exam.html'">Quick Start</button>
         </div>
+        <!-- Upcoming Exams and Recent Results -->
         <div class="row">
             <div class="col section">
                 <div class="section-title">Upcoming Exams</div>
-                <p>[List of upcoming exams]</p>
+                <ul class="list">
+                    <li>Mathematics - 5 Aug 2025</li>
+                    <li>Physics - 10 Aug 2025</li>
+                    <li>Chemistry - 15 Aug 2025</li>
+                </ul>
             </div>
             <div class="col section">
                 <div class="section-title">Recent Results</div>
-                <p>[Summary of recent results]</p>
+                <ul class="list">
+                    <li>Mathematics: 85% (Passed)</li>
+                    <li>English: 78% (Passed)</li>
+                    <li>Biology: 62% (Needs Improvement)</li>
+                </ul>
             </div>
         </div>
+        <!-- Features -->
         <div class="section">
             <div class="section-title">Features</div>
-            <ul>
-                <li>[Powered question generation]</li>
-                <li>[Instant feedback]</li>
-                <li>[Progress tracking]</li>
-                <li>[Timed exams]</li>
+            <ul class="features-list">
+                <li>AI-powered question generation</li>
+                <li>Instant feedback on submissions</li>
+                <li>Progress tracking and analytics</li>
+                <li>Timed and adaptive exams</li>
             </ul>
         </div>
-        <div class="section">
-            <div class="section-title">Footer / Contact Info</div>
-            <p>[Contact us] [Privacy Policy] [Terms of Service]</p>
+        <!-- Footer / Contact Info -->
+        <div class="section footer-section">
+            <div class="section-title">Contact & Info</div>
+            <p>
+                <a href="mailto:support@intelligentexam.com">Contact us</a> |
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms of Service</a>
+            </p>
         </div>
     </div>
     <div class="footer">
