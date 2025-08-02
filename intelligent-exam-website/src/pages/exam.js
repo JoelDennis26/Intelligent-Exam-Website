@@ -5,12 +5,12 @@ export function renderExamPage() {
         <div class="subtitle">Empowering Smart Learning</div>
     </div>
     <div class="nav">
-        <button onclick="location.href='home.html'">Home</button>
-        <button onclick="location.href='exam.html'">Take Exam</button>
-        <button onclick="location.href='results.html'">Results</button>
-        <button onclick="location.href='profile.html'">Profile</button>
-        <button onclick="location.href='admin.html'">Admin</button>
-        <button onclick="location.href='login.html'">Login/Logout</button>
+        <button data-page="home">Home</button>
+        <button data-page="exam">Take Exam</button>
+        <button data-page="results">Results</button>
+        <button data-page="profile">Profile</button>
+        <button data-page="admin">Admin</button>
+        <button data-page="login">Login/Logout</button>
     </div>
     <div class="container">
         <div class="header">

@@ -1,11 +1,15 @@
 export function renderResultsPage() {
     return `
     <div class="container">
+        <div class="nav">
+                <button data-page="home">Home</button>
+        </div>
         <div class="header">
             <h1>Exam Results</h1>
             <p>Student Name: <strong>[Name]</strong></p>
             <p>Exam: <strong>[Exam Title]</strong></p>
         </div>
+        
         <div class="summary">
             <div class="summary-item">
                 <h2>[Score]</h2>

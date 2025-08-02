@@ -1,17 +1,16 @@
 export function renderLoginPage() {
-    // The HTML structure for the login/logout page
     return `
     <div class="header">
         <h1>Intelligent Exam Website</h1>
         <div class="subtitle">Empowering Smart Learning</div>
     </div>
     <div class="nav">
-        <button onclick="location.href='home.html'">Home</button>
-        <button onclick="location.href='exam.html'">Take Exam</button>
-        <button onclick="location.href='results.html'">Results</button>
-        <button onclick="location.href='profile.html'">Profile</button>
-        <button onclick="location.href='admin.html'">Admin</button>
-        <button onclick="location.href='login.html'">Login/Logout</button>
+        <button data-page="home">Home</button>
+        <button data-page="exam">Take Exam</button>
+        <button data-page="results">Results</button>
+        <button data-page="profile">Profile</button>
+        <button data-page="admin">Admin</button>
+        <button data-page="login">Login/Logout</button>
     </div>
     <div class="container login-container">
         <form id="loginForm">
@@ -35,7 +34,6 @@ export function renderLoginPage() {
     `;
 }
 
-// Add this function to handle login/logout logic after rendering
 export function setupLoginPageEvents() {
     setTimeout(() => {
         const loginForm = document.getElementById('loginForm');

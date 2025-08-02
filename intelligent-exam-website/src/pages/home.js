@@ -14,7 +14,7 @@ export function renderHomePage() {
     </div>
     <div class="container">
         <div class="section hero">
-            <img src="logo.png" alt="Logo" class="logo" />
+            <img src="/logo-exam.jpg" alt="Logo" class="logo" />
             <h2>Welcome to Intelligent Exam Website!</h2>
             <p>Your platform for smart, AI-powered assessments and instant feedback.</p>
             <button class="quick-start" data-page="exam">Quick Start</button>
