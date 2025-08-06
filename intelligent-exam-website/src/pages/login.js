@@ -1,5 +1,3 @@
-// ./pages/login.js
-
 export function renderLoginPage() {
   return `
     <div class="header">
@@ -37,8 +35,7 @@ export function setupLoginPageEvents() {
   setTimeout(() => {
     const loginForm = document.getElementById("loginForm");
 
-    if (loginForm) {
-      loginForm.addEventListener("submit", function (e) {
+    loginForm.addEventListener("submit", async function (e) {
         e.preventDefault();
 
         const username = document.getElementById("username").value.trim();
@@ -49,25 +46,34 @@ export function setupLoginPageEvents() {
           return;
         }
 
-        // Get users from localStorage
-        const users = JSON.parse(localStorage.getItem("users") || "[]");
-        const matchedUser = users.find(user => user.username === username && user.password === password);
+        try{
+            const res = await fetch("http://localhost:3001/api/auth/login",{
+                method:"POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({username,password}),
+            });
+            const data = await res.json();
 
-        if (matchedUser) {
-          localStorage.setItem("loggedInUser", JSON.stringify(matchedUser));
+            if(res.ok){
+                alert("Login Successful!");
 
-          alert("Login successful!");
+                localStorage.setItem("loggedInUser",JSON.stringify(data.user));
 
-          if (username === "admin") {
-            document.querySelector('[data-page="admin"]')?.click();
-          } else {
-            document.querySelector('[data-page="profile"]')?.click();
-          }
-        } else {
-          alert("Invalid username or password.");
+                if(data.user.username === "admin"){
+                    document.querySelector('[data-page="admin"]').click();
+                }else{
+                    document.querySelector('[data-page="profile"]')?.click();
+                }
+            }else{
+                alert("Invalid credentials");
+            }
+        }catch(err){
+            console.error("Login error:", err);
+            alert("An error occurred during login. Please try again later.");
         }
-      });
-    }
+    });
 
     const registerLink = document.querySelector(".register-link");
     if (registerLink) {
