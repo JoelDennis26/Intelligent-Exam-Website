@@ -351,3 +351,220 @@ body {
 #logoutBtn:hover {
   background: #d9363e;
 }
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+.header {
+    background-color: #3a7afe;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2rem;
+}
+
+.header .subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Navigation Bar */
+.nav {
+    display: flex;
+    justify-content: center;
+    background-color: #e6ecff;
+    padding: 10px 0;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.nav button {
+    background-color: #3a7afe;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.nav button:hover {
+    background-color: #2d5fd2;
+}
+
+/* Main Profile Container */
+.container.profile-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9faff;
+    border: 1px solid #d0d9ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.profile-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #3a7afe;
+}
+
+/* Form Styling */
+#profileForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#profileForm label {
+    font-weight: 600;
+    color: #333;
+}
+
+#profileForm input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+#profileForm input:focus {
+    border-color: #3a7afe;
+    outline: none;
+}
+
+/* Notes */
+.note {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+/* Submit Button */
+#profileForm button[type="submit"] {
+    background-color: #3a7afe;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#profileForm button[type="submit"]:hover {
+    background-color: #2d5fd2;
+}
+
+/* Feedback Message */
+.profile-message {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* Footer */
+.footer {
+    margin-top: 50px;
+    background-color: #3a7afe;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.95rem;
+}
+
+/* Register & Login Containers */
+.container.login-container,
+.container.register-container {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #f9faff;
+    border: 1px solid #d0d9ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #3a7afe;
+}
+
+#loginForm, #registerForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#loginForm input,
+#registerForm input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+#loginForm button,
+#registerForm button {
+    background-color: #3a7afe;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+#loginForm button:hover,
+#registerForm button:hover {
+    background-color: #2d5fd2;
+}
+
+.register-link,
+.login-link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #3a7afe;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.register-link:hover,
+.login-link:hover {
+    text-decoration: underline;
+}
+
+.register-message {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.register-container, .login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.register-container form, .login-container form {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+}

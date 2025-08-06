@@ -5,7 +5,8 @@ export function renderAdminPage() {
         <div class="subtitle">Admin Dashboard</div>
     </div>
     <div class="nav">
-        <button data-page="admin">Dashboard</button>
+        <button data-page="home">Home</button>
+        <button data-page="dashboard">Dashboard</button>
         <button data-page="users">Users</button>
         <button data-page="exam">Exams</button>
         <button data-page="results">Results</button>
