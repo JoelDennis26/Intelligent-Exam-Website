@@ -1,9 +1,12 @@
 export function renderResultsPage() {
-    return `
+  return `
     <div class="container">
         <div class="nav">
-                <button data-page="home">Home</button>
+            <button data-page="home">Home</button>
+            <button data-page="profile">Profile</button>
+            <button data-page="exam">Take Another Exam</button>
         </div>
+
         <div class="header">
             <h1>Exam Results</h1>
             <p>Student Name: <strong>[Name]</strong></p>
@@ -24,6 +27,7 @@ export function renderResultsPage() {
                 <p>Time Taken</p>
             </div>
         </div>
+
         <table class="results-table">
             <thead>
                 <tr>
@@ -45,11 +49,12 @@ export function renderResultsPage() {
                 <!-- More rows -->
             </tbody>
         </table>
+
         <div class="actions">
-            <button class="secondary">Back to Dashboard</button>
-            <button>Review Answers</button>
-            <button>Download PDF</button>
+            <button data-page="profile" class="secondary">Back to Dashboard</button>
+            <button data-page="review">Review Answers</button>
+            <button id="downloadPdf">Download PDF</button>
         </div>
     </div>
-    `;
+  `;
 }

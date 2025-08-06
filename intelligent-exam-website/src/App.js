@@ -8,6 +8,8 @@ import { renderResultsPage } from "./pages/results";
 import { setupExamPageEvents } from "./pages/exam";
 import { setupLoginPageEvents } from "./pages/login";
 import { setupProfilePageEvents } from "./pages/profile";
+import { renderRegisterPage } from "./pages/register";
+import { setupRegisterPageEvents } from "./pages/register";
 import './App.css';
 
 const pageMap = {
@@ -17,12 +19,14 @@ const pageMap = {
   admin: renderAdminPage,
   exam: renderExamPage,
   results: renderResultsPage,
+  register: renderRegisterPage,
 };
 
 const setupMap = {
   login: setupLoginPageEvents,
   profile: setupProfilePageEvents,
   exam: setupExamPageEvents,
+  register: setupRegisterPageEvents,
 };
 
 function App() {
@@ -32,7 +36,7 @@ function App() {
     if (setupMap[currentPage]) {
       setupMap[currentPage]();
     }
-    // Delegate navigation for all buttons with data-page attribute
+
     const handler = (e) => {
       const btn = e.target.closest("button[data-page]");
       if (btn) {
@@ -43,8 +47,21 @@ function App() {
         }
       }
     };
+
+    const navHandler = (e) => {
+      const newPage = e.detail?.page;
+      if (newPage && pageMap[newPage]) {
+        setCurrentPage(newPage);
+      }
+    };
+
     document.addEventListener("click", handler);
-    return () => document.removeEventListener("click", handler);
+    window.addEventListener("navigate", navHandler);
+
+    return () => {
+      document.removeEventListener("click", handler);
+      window.removeEventListener("navigate", navHandler);
+    };
   }, [currentPage]);
 
   return (
