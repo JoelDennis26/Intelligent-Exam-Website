@@ -1,5 +1,3 @@
-// ./pages/register.js
-
 export function renderRegisterPage() {
     return `
     <div class="header">
@@ -41,7 +39,7 @@ export function setupRegisterPageEvents() {
         const registerForm = document.getElementById("registerForm");
 
         if (registerForm) {
-            registerForm.addEventListener("submit", function (e) {
+            registerForm.addEventListener("submit", async function (e) {
                 e.preventDefault();
 
                 const username = document.getElementById("newUsername").value.trim();
@@ -58,19 +56,27 @@ export function setupRegisterPageEvents() {
                     return;
                 }
 
-                const existingUsers = JSON.parse(localStorage.getItem("users") || "[]");
-                const userExists = existingUsers.some(user => user.username === username);
+                try {
+                    const response = await fetch("http://localhost:3001/api/auth/register", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ username, password }),
+                    });
 
-                if (userExists) {
-                    alert("Username already exists!");
-                    return;
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        alert("Registration successful! Redirecting to login...");
+                        document.querySelector('[data-page="login"]')?.click();
+                    } else {
+                        alert(data.message || "Registration failed");
+                    }
+                } catch (error) {
+                    console.error("Registration error:", error);
+                    alert("An error occurred during registration.");
                 }
-
-                existingUsers.push({ username, password });
-                localStorage.setItem("users", JSON.stringify(existingUsers));
-
-                alert("Registration successful! Redirecting to login...");
-                document.querySelector('[data-page="login"]')?.click();
             });
 
             const loginLink = document.querySelector(".login-link");
